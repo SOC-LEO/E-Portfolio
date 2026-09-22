@@ -3,448 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leo Nelson | Cybersecurity Portfolio</title>
+  <meta name="description" content="Leo Nelson is a cybersecurity analyst specializing in blue-team operations, Rapid7 investigations, vulnerability management, and security tooling." />
+  <meta name="theme-color" content="#07131a" />
+  <title>Leo Nelson | Cybersecurity Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --bg: #0b1020;
-      --panel: #121933;
-      --panel-2: #182244;
-      --text: #e9eefc;
-      --muted: #a9b7d9;
-      --accent: #4ade80;
-      --accent-2: #22c55e;
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 18px 50px rgba(0,0,0,0.28);
-      --max: 1100px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #09101d 0%, #0b1020 100%);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: 0 auto;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(9, 16, 29, 0.8);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 0;
-      gap: 18px;
-    }
-
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      color: white;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      font-size: 0.95rem;
-    }
-
-    .hero {
-      padding: 72px 0 40px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.95fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .card {
-      background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      box-shadow: var(--shadow);
-      padding: 26px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--accent);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 0.82rem;
-      margin-bottom: 8px;
-    }
-
-    h1, h2, h3 { margin-top: 0; }
-    h1 {
-      font-size: clamp(2rem, 4vw, 3.3rem);
-      line-height: 1.1;
-      margin-bottom: 12px;
-    }
-
-    .lead {
-      color: var(--muted);
-      font-size: 1.06rem;
-      max-width: 62ch;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      transition: transform 0.15s ease, opacity 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #06210f;
-      border: none;
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 16px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.45rem;
-      margin-bottom: 4px;
-      color: white;
-    }
-
-    section {
-      padding: 22px 0;
-    }
-
-    .section-title {
-      font-size: 1.7rem;
-      margin-bottom: 16px;
-    }
-
-    .grid-2, .grid-3 {
-      display: grid;
-      gap: 20px;
-    }
-
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-
-    .list {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    .pill-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .pill {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(74, 222, 128, 0.1);
-      color: #c9f7d8;
-      border: 1px solid rgba(74, 222, 128, 0.25);
-      font-size: 0.93rem;
-    }
-
-    .project h3, .timeline h3 { margin-bottom: 8px; }
-    .muted { color: var(--muted); }
-
-    .timeline-item {
-      padding: 16px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .timeline-item:last-child { border-bottom: none; }
-
-    footer {
-      padding: 32px 0 48px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .grid-2,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .nav-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
+    :root { --bg:#061015; --panel:rgba(12,31,40,.78); --text:#edf8f6; --muted:#9db5b4; --mint:#72e6c1; --cyan:#63cce8; --lime:#b5ed88; --border:rgba(157,215,207,.16); --border-bright:rgba(114,230,193,.38); --max:1180px; --shadow:0 22px 70px rgba(0,0,0,.32); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:92px; }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 12% 8%,rgba(57,151,157,.16),transparent 28rem),radial-gradient(circle at 90% 18%,rgba(62,128,151,.12),transparent 25rem),var(--bg); font-family:"Manrope",sans-serif; line-height:1.65; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.21; background-image:linear-gradient(rgba(125,205,198,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(125,205,198,.055) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,black,transparent 75%); }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible { outline:2px solid var(--mint); outline-offset:4px; }
+    .container { width:min(calc(100% - 40px),var(--max)); margin:0 auto; }
+    .mono { font-family:"DM Mono",monospace; }
+    .nav { position:sticky; top:0; z-index:50; border-bottom:1px solid var(--border); background:rgba(6,16,21,.82); backdrop-filter:blur(18px); }
+    .nav-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.02em; }
+    .brand-mark { width:34px; height:34px; display:grid; place-items:center; border:1px solid var(--border-bright); border-radius:10px; color:var(--mint); background:rgba(114,230,193,.08); font:500 .76rem "DM Mono",monospace; }
+    .nav-links { display:flex; align-items:center; gap:24px; color:var(--muted); font-size:.9rem; }
+    .nav-links a { transition:color .2s ease; }
+    .nav-links a:hover { color:var(--text); }
+    .hero { padding:96px 0 64px; min-height:calc(100vh - 72px); display:flex; align-items:center; }
+    .hero-grid { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(320px,.75fr); gap:64px; align-items:center; }
+    .status { display:inline-flex; align-items:center; gap:10px; margin-bottom:28px; padding:8px 12px; border:1px solid var(--border); border-radius:999px; color:#b9d0cf; background:rgba(255,255,255,.025); font-size:.78rem; }
+    .status-dot { width:8px; height:8px; border-radius:50%; background:var(--lime); box-shadow:0 0 16px var(--lime); }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:840px; margin-bottom:24px; font-size:clamp(3.15rem,7vw,6.3rem); line-height:.98; letter-spacing:-.065em; }
+    .gradient-text { color:transparent; background:linear-gradient(115deg,var(--mint),var(--cyan)); background-clip:text; -webkit-background-clip:text; }
+    .hero-copy { max-width:710px; color:var(--muted); font-size:clamp(1.05rem,2vw,1.25rem); }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 19px; border:1px solid var(--border); border-radius:11px; font-weight:700; font-size:.91rem; transition:transform .2s ease,border-color .2s ease,background .2s ease; }
+    .btn:hover { transform:translateY(-2px); border-color:var(--border-bright); }
+    .btn-primary { color:#051713; background:var(--mint); border-color:var(--mint); }
+    .btn-primary:hover { background:#92efd1; }
+    .btn-secondary { background:rgba(255,255,255,.025); }
+    .terminal { position:relative; overflow:hidden; border:1px solid var(--border-bright); border-radius:18px; background:linear-gradient(160deg,rgba(15,41,50,.9),rgba(7,21,28,.92)); box-shadow:var(--shadow),0 0 70px rgba(75,193,176,.08); }
+    .terminal-bar { display:flex; align-items:center; gap:7px; padding:14px 16px; border-bottom:1px solid var(--border); }
+    .terminal-dot { width:8px; height:8px; border-radius:50%; background:#43616a; }
+    .terminal-title { margin-left:auto; color:#708d91; font-size:.68rem; }
+    .terminal-body { padding:24px; font:400 .78rem/1.85 "DM Mono",monospace; color:#a8c6c5; }
+    .prompt { color:var(--mint); } .value { color:var(--cyan); } .terminal-line { display:block; } .terminal-spacer { height:13px; }
+    .cursor { display:inline-block; width:7px; height:1em; vertical-align:-2px; background:var(--mint); animation:blink 1.1s step-end infinite; }
+    @keyframes blink { 50% { opacity:0; } }
+    section { position:relative; padding:88px 0; }
+    .section-kicker { margin-bottom:10px; color:var(--mint); font:500 .74rem "DM Mono",monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .section-heading { max-width:760px; margin-bottom:42px; font-size:clamp(2rem,4vw,3.15rem); line-height:1.1; letter-spacing:-.045em; }
+    .about-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; }
+    .about-copy { color:var(--muted); font-size:1.05rem; }
+    .about-copy strong { color:var(--text); font-weight:600; }
+    .metrics { display:grid; grid-template-columns:repeat(2,1fr); border:1px solid var(--border); border-radius:16px; overflow:hidden; background:var(--panel); }
+    .metric { min-height:145px; padding:24px; border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .metric:nth-child(2n) { border-right:0; } .metric:nth-last-child(-n+2) { border-bottom:0; }
+    .metric strong { display:block; margin-bottom:7px; color:var(--mint); font-size:1.25rem; letter-spacing:-.03em; }
+    .metric span { color:var(--muted); font-size:.88rem; }
+    .experience-card { display:grid; grid-template-columns:.34fr 1fr; gap:40px; padding:34px; border:1px solid var(--border); border-radius:18px; background:var(--panel); box-shadow:0 18px 60px rgba(0,0,0,.16); }
+    .role-meta { color:var(--muted); font-size:.87rem; }
+    .role-meta strong { display:block; margin-bottom:6px; color:var(--text); font-size:1.1rem; }
+    .role-copy h3 { margin-bottom:12px; font-size:1.55rem; letter-spacing:-.03em; }
+    .role-copy>p { color:var(--muted); }
+    .impact-list { display:grid; grid-template-columns:repeat(2,1fr); gap:12px 28px; margin:26px 0 0; padding:0; list-style:none; }
+    .impact-list li { position:relative; padding-left:19px; color:#bfd0cf; font-size:.91rem; }
+    .impact-list li::before { content:">"; position:absolute; left:0; color:var(--mint); font:500 .82rem "DM Mono",monospace; }
+    .project-grid { display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+    .project-card { position:relative; min-height:330px; padding:30px; overflow:hidden; border:1px solid var(--border); border-radius:18px; background:linear-gradient(150deg,rgba(14,38,48,.92),rgba(8,24,31,.88)); transition:transform .25s ease,border-color .25s ease; }
+    .project-card:hover { transform:translateY(-4px); border-color:var(--border-bright); }
+    .project-card::after { content:""; position:absolute; width:180px; height:180px; right:-80px; bottom:-95px; border-radius:50%; background:rgba(99,204,232,.055); }
+    .project-featured { grid-column:span 7; } .project-secondary { grid-column:span 5; } .project-third { grid-column:span 5; } .project-fourth { grid-column:span 7; }
+    .project-number { display:block; margin-bottom:62px; color:var(--mint); font:500 .72rem "DM Mono",monospace; }
+    .project-card h3 { margin-bottom:12px; font-size:1.42rem; letter-spacing:-.03em; }
+    .project-card p { max-width:62ch; margin-bottom:22px; color:var(--muted); font-size:.93rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .tag { padding:6px 9px; border:1px solid var(--border); border-radius:6px; color:#a9c4c3; font:400 .68rem "DM Mono",monospace; }
+    .skills-layout { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .skill-group { padding:28px; border:1px solid var(--border); border-radius:16px; background:rgba(11,29,38,.62); }
+    .skill-group h3 { margin-bottom:20px; font-size:1rem; color:var(--cyan); }
+    .skill-list { display:flex; flex-wrap:wrap; gap:9px; }
+    .skill { padding:8px 11px; border-radius:7px; color:#c5d7d6; background:rgba(255,255,255,.035); font-size:.8rem; }
+    .cert-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .cert-card { padding:28px; border:1px solid var(--border); border-radius:16px; background:var(--panel); }
+    .cert-top { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+    .cert-card h3 { margin-bottom:7px; font-size:1.2rem; }
+    .cert-state { padding:5px 8px; border-radius:6px; color:var(--mint); background:rgba(114,230,193,.08); font:500 .65rem "DM Mono",monospace; white-space:nowrap; }
+    .cert-card p { color:var(--muted); font-size:.86rem; }
+    .progress { height:7px; margin-top:22px; overflow:hidden; border-radius:999px; background:rgba(255,255,255,.06); }
+    .progress-bar { width:30%; height:100%; border-radius:inherit; background:linear-gradient(90deg,var(--mint),var(--cyan)); }
+    .progress-label { display:flex; justify-content:space-between; margin-top:9px; color:var(--muted); font:400 .68rem "DM Mono",monospace; }
+    .education { display:grid; grid-template-columns:.55fr 1fr; gap:40px; padding:30px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+    .education h3 { margin-bottom:5px; font-size:1.15rem; } .education p { margin-bottom:0; color:var(--muted); font-size:.88rem; }
+    .contact-card { padding:58px; border:1px solid var(--border-bright); border-radius:20px; text-align:center; background:linear-gradient(145deg,rgba(18,54,61,.72),rgba(8,25,32,.9)); box-shadow:var(--shadow); }
+    .contact-card h2 { margin-bottom:14px; font-size:clamp(2.2rem,5vw,4rem); letter-spacing:-.055em; }
+    .contact-card p { max-width:630px; margin:0 auto 28px; color:var(--muted); }
+    .contact-links { display:flex; flex-wrap:wrap; justify-content:center; gap:12px; }
+    footer { padding:30px 0 42px; color:#718b8d; font:400 .72rem "DM Mono",monospace; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; padding-top:24px; border-top:1px solid var(--border); }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .reveal { opacity:1; transform:none; transition:none; } .cursor { animation:none; } }
+    @media (max-width:880px) { .nav-links a:not(.nav-contact) { display:none; } .hero { min-height:auto; padding-top:72px; } .hero-grid,.about-grid { grid-template-columns:1fr; gap:42px; } .terminal { max-width:540px; } .experience-card { grid-template-columns:1fr; gap:22px; } .impact-list { grid-template-columns:1fr; } .project-featured,.project-secondary,.project-third,.project-fourth { grid-column:span 12; } .project-number { margin-bottom:36px; } .skills-layout,.cert-grid { grid-template-columns:1fr; } .education { grid-template-columns:1fr; gap:14px; } }
+    @media (max-width:560px) { .container { width:min(calc(100% - 28px),var(--max)); } .brand-name { font-size:.92rem; } h1 { font-size:clamp(2.75rem,15vw,4rem); } .hero { padding:58px 0 40px; } section { padding:65px 0; } .metrics { grid-template-columns:1fr; } .metric { border-right:0; } .metric:nth-last-child(2) { border-bottom:1px solid var(--border); } .experience-card,.project-card,.skill-group,.cert-card { padding:23px; } .contact-card { padding:42px 22px; } .footer-inner { flex-direction:column; } }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <div class="brand">Leo Nelson</div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="container hero-grid">
-      <div class="card">
-        <div class="eyebrow">Cybersecurity Portfolio</div>
-        <h1>Aspiring SOC Analyst focused on blue-team defense and practical security work.</h1>
-        <p class="lead">
-          I am a Cybersecurity student at the University of Idaho with hands-on experience in packet analysis,
-          Linux systems, network defense, and system programming. I hold CompTIA Security+, actively train on
-          TryHackMe and Hack The Box, and have a Network Security internship lined up for Summer 2026.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:VleolionV@gmail.com">Contact Me</a>
-          <a class="btn btn-secondary" href="#projects">View Projects</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <h2>Highlights</h2>
-        <div class="stats">
-          <div class="stat">
-            <strong>Security+</strong>
-            <span class="muted">CompTIA certified, January 2026</span>
-          </div>
-          <div class="stat">
-            <strong>1st Place</strong>
-            <span class="muted">Hackathon-winning finance dashboard project</span>
-          </div>
-          <div class="stat">
-            <strong>CySA+</strong>
-            <span class="muted">Currently planned and preparing next</span>
-          </div>
-          <div class="stat">
-            <strong>Summer 2026</strong>
-            <span class="muted">Incoming Network Security internship</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
+  <nav class="nav" aria-label="Primary navigation"><div class="container nav-inner"><a class="brand" href="#top" aria-label="Leo Nelson, home"><span class="brand-mark">LN</span><span class="brand-name">Leo Nelson</span></a><div class="nav-links"><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="nav-contact" href="#contact">Contact</a></div></div></nav>
+  <header class="hero" id="top"><div class="container hero-grid">
+    <div><div class="status mono"><span class="status-dot"></span> Cybersecurity analyst · Moscow, Idaho</div><h1>Defending systems.<br /><span class="gradient-text">Finding the signal.</span></h1><p class="hero-copy">I’m a cybersecurity analyst and University of Idaho student focused on SOC operations, incident investigation, vulnerability management, and building practical tools that help defenders move faster. I’m also pursuing an accelerated path toward my master’s degree, expected December 2027.</p><div class="hero-actions"><a class="btn btn-primary" href="#experience">Explore my work</a><a class="btn btn-secondary" href="mailto:VleolionV@gmail.com">Get in touch</a></div></div>
+    <div class="terminal" aria-label="Professional profile summary"><div class="terminal-bar"><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-title mono">analyst-profile.sh</span></div><div class="terminal-body"><span class="terminal-line"><span class="prompt">$</span> whoami</span><span class="terminal-line value">leo_nelson</span><div class="terminal-spacer"></div><span class="terminal-line"><span class="prompt">$</span> cat focus.txt</span><span class="terminal-line">blue_team / soc / incident_response</span><div class="terminal-spacer"></div><span class="terminal-line"><span class="prompt">$</span> certs --status</span><span class="terminal-line"><span class="value">Security+</span> &nbsp;[earned]</span><span class="terminal-line"><span class="value">BTL1</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[30% complete]</span><div class="terminal-spacer"></div><span class="terminal-line"><span class="prompt">$</span> status</span><span class="terminal-line">learning, investigating, building <span class="cursor"></span></span></div></div>
+  </div></header>
   <main>
-    <section id="about">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title">About Me</h2>
-          <p class="muted">
-            My background combines defensive cybersecurity coursework, hands-on labs, and practical technical work.
-            I enjoy analyzing traffic, understanding how systems behave under attack, and building tools or dashboards
-            that turn complex information into something useful. I am especially interested in SOC operations, threat
-            detection, incident response, and blue-team analyst work.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="container grid-2">
-        <div class="card">
-          <h2 class="section-title">Technical Skills</h2>
-          <div class="pill-wrap">
-            <span class="pill">TCP/IP</span>
-            <span class="pill">DNS</span>
-            <span class="pill">Wireshark</span>
-            <span class="pill">Linux</span>
-            <span class="pill">Bash</span>
-            <span class="pill">iptables</span>
-            <span class="pill">pfSense</span>
-            <span class="pill">Git</span>
-            <span class="pill">Python</span>
-            <span class="pill">C</span>
-            <span class="pill">Packet Analysis</span>
-            <span class="pill">Incident Response</span>
-            <span class="pill">Threat Detection</span>
-            <span class="pill">SIEM Concepts</span>
-            <span class="pill">TryHackMe</span>
-            <span class="pill">Hack The Box</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2 class="section-title">Education & Certifications</h2>
-          <ul class="list">
-            <li><strong>University of Idaho</strong> — B.S. Cybersecurity</li>
-            <li><strong>CompTIA Security+</strong> — Earned January 2026</li>
-            <li><strong>CompTIA CySA+</strong> — In Progress / Planned 2026</li>
-            <li><strong>HTB CDSA</strong> — Planned 2026</li>
-          </ul>
-          <p class="muted">
-            Relevant coursework includes Operating Systems, Network Defense, Interprocess Communication,
-            Binary Analysis, and Operating System Defense.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="grid-3">
-          <article class="card project">
-            <h3>Hackathon Winner — Personal Finance Dashboard</h3>
-            <p class="muted">
-              Built a multi-tab finance application with teammates during a competitive hackathon and won 1st place.
-              The project included budget calculations, expanded spending categories, and a mortgage section integrated
-              into a clean frontend interface.
-            </p>
-            <ul class="list">
-              <li>Integrated teammate budgeting logic into a unified frontend</li>
-              <li>Implemented mortgage tools and dynamic category breakdowns</li>
-              <li>Worked with HTML, CSS, JavaScript, and Python-based logic</li>
-            </ul>
-          </article>
-
-          <article class="card project">
-            <h3>Network & Packet Analysis Portfolio</h3>
-            <p class="muted">
-              Investigated traffic behavior and packet-level events using Wireshark, with emphasis on DNS, TCP,
-              NAT behavior, malformed traffic, and suspicious patterns.
-            </p>
-            <ul class="list">
-              <li>Analyzed TCP handshakes, DNS chains, and routing behavior</li>
-              <li>Reviewed SYN flood patterns and malformed packet scenarios</li>
-              <li>Strengthened blue-team troubleshooting and traffic inspection skills</li>
-            </ul>
-          </article>
-
-          <article class="card project">
-            <h3>Binary Analysis & System Programming</h3>
-            <p class="muted">
-              Coursework and lab work focused on compiled binaries, Linux programming, and multi-process behavior.
-            </p>
-            <ul class="list">
-              <li>Interpreted control flow and logic from assembly-level analysis</li>
-              <li>Worked with pipes, signals, file I/O, and environment variables</li>
-              <li>Implemented IPC communication and process-based workflows</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="container grid-2">
-        <div class="card timeline">
-          <h2 class="section-title">Experience</h2>
-
-          <div class="timeline-item">
-            <h3>Shopify Systems Manager — Journey's End Games</h3>
-            <div class="muted">January 2026 – Present</div>
-            <ul class="list">
-              <li>Support business systems, workflow optimization, and technical troubleshooting</li>
-              <li>Contribute to SEO efforts and operational efficiency improvements</li>
-              <li>Maintain organized spreadsheets and business process tooling</li>
-            </ul>
-          </div>
-
-          <div class="timeline-item">
-            <h3>SEO Specialist — SharpNet Solutions</h3>
-            <div class="muted">May 2021 – August 2024</div>
-            <ul class="list">
-              <li>Optimized metadata, business descriptions, and content strategy for clients</li>
-              <li>Managed multiple deliverables while improving search visibility</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <h2 class="section-title">Leadership & Activities</h2>
-          <ul class="list">
-            <li>Member, Cyber Defense Club at the University of Idaho</li>
-            <li>Led a cybersecurity and scam-awareness program for senior citizens</li>
-            <li>Presented cybersecurity guidance for aspiring security students</li>
-            <li>Incoming Network Security Intern for Summer 2026</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="card">
-          <h2 class="section-title">Contact</h2>
-          <p class="muted">
-            Email: <a href="mailto:VleolionV@gmail.com">VleolionV@gmail.com</a><br />
-            Phone: 208-310-5474<br />
-            Location: Moscow, Idaho
-          </p>
-          <p class="muted">
-          </p>
-          <ul class="list">
-            <li>GitHub: <a href="#">https://github.com/SOC-LEO</a></li>
-            <li>LinkedIn: <a href="#">https://www.linkedin.com/in/leo-nelson-349264294/</a></li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <section id="about"><div class="container about-grid reveal"><div><div class="section-kicker">01 / Profile</div><h2 class="section-heading">Security work grounded in real operations.</h2></div><div><p class="about-copy">My work sits at the intersection of <strong>security operations and infrastructure</strong>. At a regional telecommunications provider, I investigate alerts, validate vulnerabilities, analyze endpoint and network behavior, and help strengthen the systems that keep customers connected. I also build internal tools that turn scattered security information into clear, actionable workflows.</p><div class="metrics" aria-label="Professional highlights"><div class="metric"><strong>Security+</strong><span>CompTIA certified since January 2026</span></div><div class="metric"><strong>BTL1</strong><span>Blue Team Level 1 training in progress</span></div><div class="metric"><strong>Rapid7</strong><span>Hands-on alert triage and vulnerability analysis</span></div><div class="metric"><strong>1st place</strong><span>University hackathon team project</span></div></div></div></div></section>
+    <section id="experience"><div class="container"><div class="section-kicker reveal">02 / Experience</div><h2 class="section-heading reveal">From alerts to action.</h2><article class="experience-card reveal"><div class="role-meta"><strong>Regional ISP</strong>2026 — Present<br />Moscow, Idaho area</div><div class="role-copy"><h3>Cybersecurity Analyst</h3><p>Support day-to-day defensive operations across a mixed telecom and enterprise environment, translating security signals into investigation, containment, remediation, and long-term improvements.</p><ul class="impact-list"><li>Triage and investigate Rapid7 InsightIDR alerts across endpoint, identity, registry, and network activity</li><li>Manage vulnerability findings with Rapid7 Nexpose and coordinate practical remediation</li><li>Investigate malware, scareware, suspicious downloads, and compromised customer email accounts</li><li>Analyze packet captures and network anomalies, including ARP, TCP, TLS, and DNS behavior</li><li>Evaluate Microsoft Defender, Sentinel, Purview, and endpoint-management capabilities</li><li>Create incident documentation, security guidance, and employee awareness training</li></ul></div></article></div></section>
+    <section id="projects"><div class="container"><div class="section-kicker reveal">03 / Selected Projects</div><h2 class="section-heading reveal">Tools built to make security clearer.</h2><div class="project-grid">
+      <article class="project-card project-featured reveal"><span class="project-number">PROJECT 01 · FEATURED</span><h3>Guardian RSS</h3><p>An internal threat-intelligence dashboard that aggregates trusted security feeds, extracts CVEs, classifies severity, and helps analysts search, filter, favorite, and archive actionable intelligence in one place.</p><div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Threat Intelligence</span><span class="tag">CVE Enrichment</span></div></article>
+      <article class="project-card project-secondary reveal"><span class="project-number">PROJECT 02</span><h3>Guardian Operations Portal</h3><p>A visual operations board for coordinating security work, with draggable tasks, calendar views, color labels, and recommended intelligence surfaced from Guardian RSS.</p><div class="tags"><span class="tag">Workflow Design</span><span class="tag">JavaScript</span><span class="tag">Security Operations</span></div></article>
+      <article class="project-card project-third reveal"><span class="project-number">PROJECT 03</span><h3>Network Defense Labs</h3><p>Hands-on analysis and hardening work spanning Wireshark investigations, Linux defense, segmentation, VPNs, firewall policy, the Cyber Kill Chain, MITRE ATT&amp;CK, D3FEND, and Log4Shell.</p><div class="tags"><span class="tag">Wireshark</span><span class="tag">Linux</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">Firewalls</span></div></article>
+      <article class="project-card project-fourth reveal"><span class="project-number">PROJECT 04 · 1ST PLACE</span><h3>Financial Survival Dashboard</h3><p>A hackathon-winning financial planning application built with a team. I helped unify budgeting logic, spending categories, and mortgage tools into an approachable multi-tab experience.</p><div class="tags"><span class="tag">Python</span><span class="tag">HTML / CSS</span><span class="tag">JavaScript</span><span class="tag">Team Development</span></div></article>
+    </div></div></section>
+    <section id="skills"><div class="container"><div class="section-kicker reveal">04 / Toolkit</div><h2 class="section-heading reveal">Technical depth across the defensive stack.</h2><div class="skills-layout">
+      <div class="skill-group reveal"><h3 class="mono">Security operations</h3><div class="skill-list"><span class="skill">Alert Triage</span><span class="skill">Incident Response</span><span class="skill">Threat Detection</span><span class="skill">Vulnerability Management</span><span class="skill">Email Security</span><span class="skill">Security Awareness</span></div></div>
+      <div class="skill-group reveal"><h3 class="mono">Platforms &amp; tools</h3><div class="skill-list"><span class="skill">Rapid7 InsightIDR</span><span class="skill">Rapid7 Nexpose</span><span class="skill">Wireshark</span><span class="skill">Microsoft Defender</span><span class="skill">Microsoft Sentinel</span><span class="skill">Cloudflare</span><span class="skill">PDQ</span></div></div>
+      <div class="skill-group reveal"><h3 class="mono">Systems &amp; networking</h3><div class="skill-list"><span class="skill">TCP/IP</span><span class="skill">DNS</span><span class="skill">Packet Analysis</span><span class="skill">Linux</span><span class="skill">Windows</span><span class="skill">Firewalls</span><span class="skill">Network Segmentation</span></div></div>
+      <div class="skill-group reveal"><h3 class="mono">Development</h3><div class="skill-list"><span class="skill">Python</span><span class="skill">Flask</span><span class="skill">SQLite</span><span class="skill">PowerShell</span><span class="skill">Bash</span><span class="skill">HTML / CSS / JS</span><span class="skill">Git</span></div></div>
+    </div></div></section>
+    <section id="credentials"><div class="container"><div class="section-kicker reveal">05 / Credentials</div><h2 class="section-heading reveal">Certified—and still sharpening the craft.</h2><div class="cert-grid"><article class="cert-card reveal"><div class="cert-top"><div><h3>CompTIA Security+</h3><p>Earned January 2026</p></div><span class="cert-state">CERTIFIED</span></div></article><article class="cert-card reveal"><div class="cert-top"><div><h3>Blue Team Level 1</h3><p>Security Blue Team</p></div><span class="cert-state">IN PROGRESS</span></div><div class="progress" aria-label="BTL1 course progress: 30 percent"><div class="progress-bar"></div></div><div class="progress-label"><span>COURSE PROGRESS</span><span>30%</span></div></article></div><div class="education reveal"><div><h3>University of Idaho</h3><p>B.S. Cybersecurity · Accelerated master’s pathway</p></div><p>Continuing directly into a master’s program with an expected completion date of December 2027—only one semester after completing my bachelor’s degree. Coursework includes Network Defense, Operating System Defense, Binary Analysis, Linux system programming, and interprocess communication.</p></div></div></section>
+    <section id="contact"><div class="container"><div class="contact-card reveal"><div class="section-kicker">06 / Contact</div><h2>Let’s connect.</h2><p>I’m building toward a career in blue-team security and SOC operations. Reach out to talk security, projects, or future opportunities.</p><div class="contact-links"><a class="btn btn-primary" href="mailto:VleolionV@gmail.com">Email me</a><a class="btn btn-secondary" href="https://www.linkedin.com/in/leo-nelson-349264294/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a class="btn btn-secondary" href="https://github.com/SOC-LEO" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div></div></section>
   </main>
-
-  <footer>
-    <div class="container">
-      Leo Nelson — Cybersecurity Portfolio
-    </div>
-  </footer>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Leo Nelson</span><span>Built with purpose · Secured by curiosity</span></div></footer>
+  <script>document.getElementById("year").textContent=new Date().getFullYear();const observer=new IntersectionObserver((entries)=>{entries.forEach((entry)=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}});},{threshold:.08});document.querySelectorAll(".reveal").forEach((element)=>observer.observe(element));</script>
 </body>
 </html>
